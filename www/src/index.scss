@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@layer components {
+    .input {
+        &:focus {
+            @apply input-primary
+        }
+    }
+}
+
+html,
+body {
+    //height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    //height: calc(var(--vh, 1vh) * 100);
+
+    //font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+@import "style/loader";
+@import "style/modal";
+

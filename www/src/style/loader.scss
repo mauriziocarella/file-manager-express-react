@@ -1,0 +1,15 @@
+.loader {
+	animation: spin 1s ease-in-out infinite;
+	border-width: 3px;
+
+	@apply rounded-full border-gray-300 border-t-primary block mx-auto w-12 h-12
+}
+.loader.fixed {
+	@apply absolute inset-1/2
+}
+
+@keyframes spin {
+	to {
+		-webkit-transform: rotate(-1turn)
+	}
+}

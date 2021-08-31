@@ -1,0 +1,16 @@
+.modal-box {
+	@apply transform-none
+}
+.modal-box.modal-md {
+	@apply max-w-lg
+}
+.modal-box.modal-lg {
+	@apply max-w-3xl
+}
+.modal-box.modal-xl {
+	@apply max-w-5xl
+}
+
+.modal-box.modal-full {
+	@apply max-w-full h-full transform-none rounded-none
+}
