@@ -18,7 +18,7 @@ router.get('/', async function (req, res, next) {
 			}
 		}
 	])
-		.then((result) => result[0].size)
+		.then((result) => Array.isArray(result) && result.length > 0 ? result[0].size : 0)
 
 	const latest = await File.findOne()
 		.sort('-createdAt')
