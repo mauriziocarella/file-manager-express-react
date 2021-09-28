@@ -13,7 +13,8 @@ const config = {
     },
     content: {
         // path: '\\\\RASPBERRYPI\\maurizio',
-        path: '\\\\raspberrypi.local\\system\\Video',
+        // path: '\\\\raspberrypi.local\\system\\Video',
+        path: '/data',
         extensions: ['mp4', 'mkv']
     },
     thumbnails: {
