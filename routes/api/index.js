@@ -11,10 +11,25 @@ const config = require('../../config');
 const {File} = require('../../db');
 const Preview = require('../../utils/media');
 const Media = require('../../utils/media');
+const {User} = require('../../db');
 
 router.use('/files', require('./files'));
 router.use('/statistics', require('./statistics'));
 router.use('/auth', require('./auth'));
+
+router.get('/install', async function (req, res, next) {
+	const {email, password} = req.query;
+
+	if (!email || !password) return next('Invalid data');
+	if (await User.findOne({email})) return next('User already registered');
+
+	const user = await User.create({
+		email,
+		password,
+	});
+
+	res.json(user);
+})
 
 router.get('/scripts/thumbnails', async function (req, res, next) {
 	const files = await File.find({
